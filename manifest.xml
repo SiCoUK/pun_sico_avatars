@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension SYSTEM "ext-1.0.dtd">
+
+<!--
+/**
+ * SEO Avatars
+ *
+ * @copyright Copyright (C) 2009 SiCo
+ * @package sico_avatars
+ */
+-->
+
+<extension engine="1.0">
+	<id>sico_avatars</id>
+	<title>SiCo Avatars</title>
+	<version>0.0.2</version>
+	<description>Adds various extra tweaks to the avatar system.</description>
+	<author>Simon Corless</author>
+	<minversion>1.3</minversion>
+	<maxtestedon>1.3.3</maxtestedon>
+
+	<install><![CDATA[
+
+	]]></install>
+
+	<uninstall><![CDATA[
+
+	]]></uninstall>
+
+	<hooks>
+
+		<!--
+		/**
+		 * Add a bullet point to the avatar bulleted list
+		 */ -->
+		<hook id="pf_change_details_avatar_pre_header_load"><![CDATA[
+		
+			// Include the language file
+			if (file_exists($ext_info['path'].'/lang/'.$forum_user['language'].'/'.$ext_info['id'].'.php'))
+				include_once $ext_info['path'].'/lang/'.$forum_user['language'].'/'.$ext_info['id'].'.php';
+			else
+				include_once $ext_info['path'].'/lang/English/'.$ext_info['id'].'.php';
+		
+			$forum_page['frm_info']['avatar_warning'] = '<li><span>' . $lang_sico_avatar['Avatar Warning'] . '</span></li>';
+		]]></hook>
+		
+	</hooks>
+
+</extension>
