@@ -13,11 +13,11 @@
 <extension engine="1.0">
 	<id>sico_avatars</id>
 	<title>SiCo Avatars</title>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<description>Adds various extra tweaks to the avatar system.</description>
 	<author>Simon Corless</author>
 	<minversion>1.3</minversion>
-	<maxtestedon>1.3.3</maxtestedon>
+	<maxtestedon>1.3.6</maxtestedon>
 
 	<install><![CDATA[
 
