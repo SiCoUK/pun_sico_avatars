@@ -9,6 +9,22 @@
 if (!defined('FORUM'))
     die();
 
+function select_gravatar()
+{
+    global $forum_config, $lang_sico_avatar, $forum_user, $forum_page;
+    
+    // Show the gravatar
+    ?>
+    <div class="ct-set set<?php echo ++$forum_page['item_count'] ?>">
+        <div class="ct-box">
+            <h3 class="hn ct-legend"><?php echo $lang_sico_avatar['Gravatar'] ?></h3>
+            <p class="avatar-demo"><span><?php echo get_gravatar($forum_user['email']); ?></span></p>
+            <p><a href="http://www.gravatar.com/"><?php echo $lang_sico_avatar['Setup Gravatar'] ?></a></p>
+        </div>
+    </div>
+    <?
+}
+
 /**
  * Get either a Gravatar URL or complete image tag for a specified email address.
  *
