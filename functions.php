@@ -9,11 +9,9 @@
 if (!defined('FORUM'))
     die();
 
-function select_gravatar()
+function sico_avatar_select_gravatar()
 {
     global $forum_config, $lang_sico_avatar, $forum_user, $forum_page;
-    
-    print_r($forum_config['o_sico_avatars_gravatar']);
     
     // Show the gravatar if allowed
     if (!empty($forum_config['o_sico_avatars_gravatar'])) {
@@ -22,7 +20,7 @@ function select_gravatar()
             <div class="ct-box">
                 <h3 class="hn ct-legend"><?php echo $lang_sico_avatar['Gravatar'] ?></h3>
                 <p class="avatar-demo"><span><?php echo get_gravatar($forum_user['email']); ?></span></p>
-                <p><a href="http://www.gravatar.com/"><?php echo $lang_sico_avatar['Setup Gravatar'] ?></a></p>
+                <p><a href="http://www.gravatar.com/" target="_blank"><?php echo $lang_sico_avatar['Setup Gravatar'] ?></a></p>
             </div>
         </div>
         <?
